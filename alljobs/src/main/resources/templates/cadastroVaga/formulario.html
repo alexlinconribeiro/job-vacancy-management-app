@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   
+<head th:replace="~{base :: head}"></head>
+<link rel="stylesheet" href="/css/form.css">
+<body>
+  <div th:replace="~{base :: header}"></div>
+    <div class="flex-container">   
+        <div class="titulo-flex">
+          <h2 class="titulo-principal "> Cadastro de Vagas</h2>
+        </div>
+      </div>
+    <main class="container">
+      <div class="columns principal formulario">
+        <div class="column-formulario">
+          <article class=" article-principal-formulario">
+              <form th:object="${requisicaoNovaVaga}" action="/cadastroVaga/novo" method="post">
+                <div class="mb-3">
+                  <label for="nomedavaga" class="form-label">Nome da Vaga</label>
+                  <input th:field="*{nomeVaga}" th:errorclass="is-invalid" class="form-control " id="nomedavaga" placeholder="ex: Analista de Infra ">
+                  <div class="invalid-feedback"th:errors="*{nomeVaga}">Erros nome Vaga</div>
+                </div>
+                <div class="mb-3">
+                  <label for="descricaodavaga" class="form-label">Descrição da Vaga</label>
+                  <textarea th:field="*{descricaoVaga}" th:errorclass="is-invalid" name="descricaoVaga" class="form-control" id="descricaodavaga" placeholder="insira a descricao da vaga "></textarea>
+                  <div class="invalid-feedback" th:errors="*{descricaoVaga}">Erros descricao Vaga</div>
+                </div>
+                <div class="mb-3">
+                  <label for="requisitosdavaga" class="form-label">Requisistos da Vaga</label>
+                  <textarea th:field="*{requisitosVaga}" th:errorclass="is-invalid" class="form-control" id="requisitosdavaga" placeholder="Insira os Requisitos para concorrer a esta vaga"></textarea>
+                  <div class="invalid-feedback" th:errors="*{requisitosVaga}">Erros requisitos Vaga</div>
+                </div>
+                <div class="mb-3">
+                  <label for="local" class="form-label">Local de atuação</label>
+                  <input th:field="*{localVaga}" th:errorclass="is-invalid" class="form-control" id="local" placeholder="Ex: Remoto,Hibrido,Presencial ">
+                  <div class="invalid-feedback" th:errors="*{localVaga}">Erros local Vaga</div>
+                </div>
+                <button class="btn-primary"type="submit">Cadastrar</button>
+              </form>
+          </article>
+        </div>
+    </main>
+    
+</body>
+
+<script src="/js/menu-js.js"></script>
+</html>

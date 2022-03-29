@@ -1,0 +1,145 @@
+:root{
+    --cinza-claro: #4F4C4C;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.container{
+    width: 94%;
+	margin: 0 auto;
+}
+.titulo-principal{
+    font-weight: 700;
+    font-size: 2.5rem;
+    vertical-align: center;
+}
+.principal{
+    color: #f7f7f7;
+}
+
+.background-ciza-claro{
+    background-color: var(--cinza-claro);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+    position:fixed;
+    width: 100%;
+  background: #222;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 2px 2px 2px #CCC;
+}
+a {
+  color: white;
+  text-decoration: none;
+  border: 0;;
+}
+
+.nav-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    gap: 60px;
+    order: 1;
+  
+    
+}
+
+.logo{
+    display: flex;
+    font-size: 1.5rem;
+    
+}
+
+.hamburguer{
+    display: none;
+    cursor:pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.login{
+    font-size: 16px;
+    padding-right: 10px;
+}
+.img-login{
+    width: 30px;
+    height: 30px;
+}
+.titulo-job{
+    color: #222;
+    display: flex;
+    justify-content: start;
+    
+}
+.empresa-job{
+    color: #222;
+    display: flex;
+    justify-content: start;
+
+}
+
+@media(max-width:768px){
+    .hamburguer{
+        display: block;
+    }
+    .hamburguer.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburguer.active .bar:nth-child(1){
+        transform: translateY(8px ) rotate(45deg);
+    }
+    .hamburguer.active .bar:nth-child(3){
+        transform: translateY(-8px ) rotate(-45deg);
+    }
+    .nav-list{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #262626;
+        width: 40%;
+        text-align: left;
+        transition: 0.5s;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+      
+    
+    }
+    .nav-iten{
+        
+        padding: 5px;
+        width: 70%;
+        height: 70px;    
+    }
+    .nav-list.active{
+        right: 0;
+        height:100%;
+        width:75%;
+    }
+   
+   
+}
